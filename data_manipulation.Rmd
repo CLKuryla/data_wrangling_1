@@ -31,3 +31,24 @@ select(litters_df, group, gd0_weight:gd_of_birth)
 select(litters_df, -litter_number)
 ```
 
+Renaming columns...
+
+```{r}
+select(litters_df, new_name = group, new_name_2 = litter_number) # only keeps those two
+```
+
+
+```{r}
+rename(litters_df, new_name = group, new_name_2 = litter_number) # keeps everything, and renames as directed
+```
+
+Select helpers
+
+```{r}
+select(litters_df, starts_with("gd"))
+```
+
+```{r}
+select(litters_df, litter_number, everything())
+```
+
