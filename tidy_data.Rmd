@@ -46,3 +46,35 @@ pulse_data <-
   relocate(id, visit) %>% 
   mutate(visit = recode(visit, "bl" = "00m"))
 ```
+
+## `pivot_wider`
+
+```{r}
+analysis_result = 
+  tibble(
+    group = c("treatment", "treatment", "placebo", "placebo"),
+    time = c("pre", "post", "pre", "post"),
+    mean = c(4, 8, 3.5, 4)
+  )
+
+analysis_result
+
+pivot_wider(
+  analysis_result, 
+  names_from = "time", 
+  values_from = "mean")
+
+	#mutate(
+#		column = case_match(
+#			column,#
+#			"old_val1" ~ "new_val1",
+#			"old_val2" ~ "new_val2"
+#			))
+
+```
+
+
+
+
+
+
